@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+    <div class="container">
+        <ul>
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="#Form">Form</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </div>
+    
+    <!--id for nagv-->
+    <div id="home" class="section container">
+        <h2>Welcome to Our Platform!</h2>
+        <p>
+            We are delighted to have you here! Our platform is designed to offer you the best user experience possible, whether you are a first-time visitor or a long-time member. With a wide range of features and resources, we are committed to providing value and making your time here enjoyable and productive.
+        </p>
+        <p>
+            Our mission is to bring you content that not only informs but also empowers you to take action. Whether you're here to learn something new, share your expertise, or simply explore, we’ve crafted every aspect of our platform with you in mind. Explore our various sections such as our vibrant community discussions, detailed tutorials, and in-depth articles. We believe that knowledge is best shared, and we’re excited for you to dive into the experiences we have built.
+        </p>
+        <p>
+            As you browse through, you’ll find opportunities to connect with like-minded individuals, participate in forums, and even contribute your own ideas. We value your input, and we’re constantly striving to improve based on your feedback. Don’t hesitate to reach out to our team if you have any questions or suggestions – we are here to support you every step of the way.
+        </p>
+        <p>
+            Once again, welcome aboard! We’re thrilled to have you as part of our community. We hope your journey with us is as rewarding as we’ve envisioned, and we look forward to seeing what you’ll accomplish here. Let’s embark on this exciting journey together!
+        </p>
+    </div>
+
+    <!--id for nagv-->
+    <div id="Form" class="section form-container">
+        <h3 style="color: #0a0907;">Please Enter The Required Information</h3>
+
+        <form action="{{ url_for('receive_data') }}" method="post">
+
+            <!-- Name field-->
+            <h3 style="text-align:left;">Name</h3>
+            <input id="name" name="Name" type="text" required>
+
+            <!-- Age field-->
+            <h3 style="text-align:left;">Age</h3>
+            <input id="age" name="Age" type="number" min="1" required>
+
+            <!-- Gender field-->
+            <h3 style="text-align:left;">Gender</h3>
+            <select name="Gender" id="gender" required>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+            </select>
+
+            <!-- Interest field-->
+            <h3 style="text-align:left;">Interest</h3>
+            <select name="Interest" id="id_interest" required>
+                <option value="Arts">Arts</option>
+                <option value="Sports">Sports</option>
+                <option value="Technology">Technology</option>
+            </select>
+
+            <br><br>
+            <button id="submit" type="submit">Submit</button>
+        </form>
+
+        <div id="information">
+            <h3>{{ text }}</h3>
+        </div>
+    </div>
+
+    <br><br>
+    
+    <!--id for nagv-->
+    <div id="about" class="section">
+        <footer>
+            <p>
+                Author: Hitesh Arora
+                <br>
+            <a href="mailto:hitesh3rd@gmail.com">hitesh3rd@gmail.com</a></p>
+        </footer>
+    </div>
+
+</body>
+
+</html>
